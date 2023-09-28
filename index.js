@@ -23,7 +23,7 @@ app.set("view engine", "hbs");
 const BookModel = require("./models/book.model");
 
 app.get("/", (req, res) => {
-	res.send("home");
+	res.render("home");
 });
 
 app.get("/api/v1/books", async (req, res) => {
