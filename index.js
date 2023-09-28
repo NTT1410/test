@@ -11,14 +11,14 @@ const connectDB = require("./connectMongo");
 
 connectDB();
 
-// app.engine(
-// 	"hbs",
-// 	handlebars.engine({
-// 		extname: ".hbs",
-// 	})
-// );
+app.engine(
+	"hbs",
+	handlebars.engine({
+		extname: ".hbs",
+	})
+);
 
-// app.set("view engine", "hbs");
+app.set("view engine", "hbs");
 
 const BookModel = require("./models/book.model");
 
