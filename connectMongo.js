@@ -1,12 +1,16 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
-    try {
-        await mongoose.connect(process.env.MONGODB_CONNECT_URI)
-        console.log("Connect to MongoDB successfully")
-    } catch (error) {
-        console.log("Connect failed " + error.message )
-    }
-}
+	try {
+		const username = "haruta-job_1";
+		const password = "LPOXvK1idBRQxpt3";
 
-module.exports = connectDB
+		const url = `mongodb+srv://${username}:${password}@atlascluster.akqikjq.mongodb.net/job_recruitment?retryWrites=true&w=majority`;
+		await mongoose.connect(url);
+		console.log("Connect to MongoDB successfully");
+	} catch (error) {
+		console.log("Connect failed " + error.message);
+	}
+};
+
+module.exports = connectDB;
