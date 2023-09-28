@@ -1,5 +1,5 @@
 const express = require("express");
-const handlebars = require("express-handlebars");
+// const handlebars = require("express-handlebars");
 
 const app = express();
 
@@ -11,19 +11,19 @@ const connectDB = require("./connectMongo");
 
 connectDB();
 
-app.engine(
-	"hbs",
-	handlebars.engine({
-		extname: ".hbs",
-	})
-);
+// app.engine(
+// 	"hbs",
+// 	handlebars.engine({
+// 		extname: ".hbs",
+// 	})
+// );
 
-app.set("view engine", "hbs");
+// app.set("view engine", "hbs");
 
 const BookModel = require("./models/book.model");
 
 app.get("/", (req, res) => {
-	res.render("home");
+	res.send("home");
 });
 
 app.get("/api/v1/books", async (req, res) => {
